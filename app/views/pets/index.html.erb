@@ -1,5 +1,12 @@
 <h1>Here are all the aminals!</h1>
 
+<h4>Search</h4>
+
+<%= form_tag(pets_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search by Species" %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
+
 <hr>
 <%= link_to 'See Owners', owners_path %>
 <hr>
@@ -10,4 +17,9 @@
 
 <% @pets.each do |pet| %>
   <p> <%= link_to pet.name, pet_path(pet) %> </p>
+<% end %>
+
+<% if @pets.blank? %>
+  <h4>There are no pets of the species  '<%= params[:search] %>'!</h4>
+  <%= link_to "See All Pets", pets_path %>
 <% end %>
