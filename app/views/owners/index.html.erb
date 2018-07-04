@@ -1,0 +1,9 @@
+<h1>Here are the People that have Pets!</h1>
+
+<hr>
+<%= link_to 'Add an Owner', new_owner_path %>
+<hr>
+
+<% @owners.each do |owner| %>
+  <p> <%= link_to owner.name, owner_path(owner) %> </p>
+<% end %>

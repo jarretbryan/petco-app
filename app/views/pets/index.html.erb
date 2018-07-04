@@ -1,0 +1,13 @@
+<h1>Here are all the aminals!</h1>
+
+<hr>
+<%= link_to 'See Owners', owners_path %>
+<hr>
+<%= link_to 'Add a Pet', new_pet_path %>
+<hr>
+
+<h2>Pets:</h2>
+
+<% @pets.each do |pet| %>
+  <p> <%= link_to pet.name, pet_path(pet) %> </p>
+<% end %>

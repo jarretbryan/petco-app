@@ -1,0 +1,12 @@
+<h1>Edit this Pet</h1>
+
+<%= form_for  @pet do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %> <br>
+
+  <label> New Owner:</label>
+  <%= f.collection_select :owner_id, Owner.all, :id, :name %>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to "Go Back Without Making Changes", pet_path(@pet) %>

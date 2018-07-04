@@ -1,0 +1,17 @@
+<h1>Here is the Owner</h1>
+<hr>
+
+<p><%= @owner.name %></p>
+
+<h3>List of Pet(s)</h3>
+
+<% @owner.pets.each do |pet| %>
+   <p> <%= link_to pet.name, pet_path(pet) %> </p>
+<% end %>
+
+<hr>
+<%= link_to 'Back to All Owners', owners_path %>
+<hr>
+
+<p><strong>Delete</strong> Owner </p>
+<%= button_to "Delete Owner", owner_path(@owner), method: 'delete' %>

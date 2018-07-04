@@ -1,0 +1,18 @@
+<h1>This is a pet!</h1>
+
+<p><strong>Name:</strong></p>
+<%= @pet.name %> <br>
+
+<p><strong>Species:</strong></p>
+<%= @pet.species %><br>
+
+<hr>
+<p><strong> Owner: </strong>  <%= link_to @pet.owner.name, owner_path(@pet.owner) %> </p>
+<hr>
+<%= link_to "Edit This Pet", edit_pet_path(@pet) %>
+<hr>
+<%= button_to "Delete Pet", pet_path(@pet), method: 'delete' %>
+<hr>
+<%= link_to "All Pets", pets_path %>
+<hr>
+<%= link_to "All Owners", owners_path %>
