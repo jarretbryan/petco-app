@@ -58,3 +58,5 @@ drop down menus for assigning within a specific set of parameters look like
 <%= f.collection_select :owner_id, Owner.all, :id, :name %>
 ```
 the first variable, the @model name should be passed in from the start of the form. then you choose the method that you are reassigning (in this case, :owner_id). then choose the array that you are choosing from, and the method for each intstance of the array. then finally, the last item is what you'll display (in this case name)
+
+button_to's default to the post method, so if using button, remember to change method to get
