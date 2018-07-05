@@ -2,10 +2,16 @@
 
 <h4>Search</h4>
 
-<%= form_tag(pets_path, :method => "get", id: "search-form") do %>
+<!-- <%= form_tag(pets_path, :method => "get", id: "search-form") do %>
     <%= text_field_tag :search, params[:search], placeholder: "Search by Species" %>
     <%= submit_tag "Search", :name => nil %>
+<% end %> -->
+
+<%= form_with url: pets_path, method: :get, local:true do |f|%>
+  <%= f.text_field :search, placeholder: "Search by Species" %>
+  <%= f.submit "Search" %>
 <% end %>
+
 
 <hr>
 <%= link_to 'See Owners', owners_path %>
